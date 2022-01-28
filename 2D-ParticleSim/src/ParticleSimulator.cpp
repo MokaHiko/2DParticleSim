@@ -46,7 +46,7 @@ void ParticleSimulator::Init()
     {
         std::cout << "Failed to initialize GLAD" << std::endl;
     }
-
+    
     glfwSetKeyCallback(window, key_callback);
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
     glfwSetCursorPosCallback(window, cursor_positon_callback);
@@ -58,7 +58,7 @@ void ParticleSimulator::Init()
     glViewport(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-
+    
     //ImGui Configuration;
     IMGUI_CHECKVERSION();
     ImGui::CreateContext();
@@ -70,7 +70,7 @@ void ParticleSimulator::Init()
 
     //--------------------Load Resources--------------------
     // Load Shaders
-    ResourceManager::LoadShader("src/shaders/spriteVS.shader", "src/shaders/spriteFS.shader", nullptr, "spriteShader");
+    ResourceManager::LoadShader("shaders/spriteVS.shader", "shaders/spriteFS.shader", nullptr, "spriteShader");
 
     // configure shaders
     glm::mat4 proj = glm::ortho(0.0f, static_cast<float>(SCREEN_WIDTH), static_cast<float>(SCREEN_HEIGHT), 0.0f, -1.0f, 1.0f);
